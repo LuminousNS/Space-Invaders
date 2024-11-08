@@ -24,6 +24,8 @@ private:
     void draw();
 
 public:
-    SoundEngine();
+    SoundEngine m_SoundEngine;
+
+    GameEngine();
     void run();
-}
+};
