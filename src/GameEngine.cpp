@@ -11,6 +11,7 @@ GameEngine::GameEngine()
     Vector2i(m_Resolution.x, m_Resolution.y)));
 }
 
+// restart the clock and store the time
 void GameEngine::run()
 {
     while (m_Window.isOpen())

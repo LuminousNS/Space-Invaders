@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <map>
+// #include "GameScreen.h"
 #include "ScreenManagerRemoteControl.h"
 #include "BitmapStore.h"
 #include <iostream>
@@ -10,10 +11,16 @@ using namespace std;
 
 class ScreenManager : public ScreenManagerRemoteControl {
 private:
-    map <string, unique_ptr<Screen> m_Screens;
+    // a map with a key-value pair 
+    // of string and a unique pointer to Screen
+    // This will allow us to grab the functionality of a specific Screen
+    // instance by using the corresponding string
+    map <string, unique_ptr<Screen>> m_Screens;
     //LevelManager m_LevelManager;
+
 protected:
     string m_CurrentScreen = "Select";
+
 public:
     BitmapStore m_BS;
     ScreenManager(Vector2i res);
@@ -24,7 +31,7 @@ public:
     *****************************************************
     From ScreenManagerRemoteControl interface
     *****************************************************
-*****************************************************/
+    *****************************************************/
     void ScreenManagerRemoteControl::
     SwitchScreens(string screenToSwitchTo)
     {

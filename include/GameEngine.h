@@ -14,6 +14,7 @@ private:
     Time m_DT;
     RenderWindow m_Window;
 
+    // a unique pointer of the screen manager type
     unique_ptr<ScreenManager> m_ScreenManager;
 
     float m_FPS = 0;
